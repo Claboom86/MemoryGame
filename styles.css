@@ -1,0 +1,85 @@
+.title {
+    font-size: 80px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.nav-bar {
+    background-color: black;
+    color: white;
+}
+
+.reset-btn{
+    border: 2px solid black;
+    border-top: none;
+    background-color: yellow;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top:0px;
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+.timer {
+    border: 2px solid black;
+    border-top: none;
+    background-color: yellow;
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top:0px;
+    margin-left: 5px;
+    margin-right: 0px;
+    height: 24px;
+    width: 62px;
+    display: block;
+    float: right;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 95%;
+    height: 95%;
+    margin: 0 auto;
+    margin-top:15px;
+    position: relative;
+}
+
+.card {
+    background-color: teal;
+    border-radius: 10%;
+    height: 125px;
+    width: 100px;
+    margin: 4px;
+    margin-bottom: 20px;
+}
+
+.start-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: yellow;
+    z-index: 10;
+    border: 2px solid black;
+    height: 250px;
+    width:  300px;
+    display: none;
+}
+
+.start-btn{
+    border: 2px solid black;
+    text-align: center;
+    background-color: pink;
+    width: 250px;
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+
+}
+
+
+.instructions {
+    margin: 10px;
+}

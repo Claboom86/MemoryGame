@@ -1,6 +1,7 @@
 "use strict";
 
 $(document).ready(() => {
+
     var classes = ["blue", "blue", "green", "green", "red", "red", "purple", "purple", "orange", "orange", "pink", "pink"];
     var randomClass = [];
 
@@ -100,3 +101,18 @@ $(document).ready(() => {
 
 
 });
+
+    $(document).on("click", ".start-btn", (event) => {
+
+        setInterval(updateDisplay, 1000);
+        function updateDisplay() {
+            var value = parseInt($("#timer").find(".value").text(), 10);
+            value++;
+            $("#timer").find(".value").text(value);
+        }
+
+
+
+    })
+})
+

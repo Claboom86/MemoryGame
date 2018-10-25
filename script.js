@@ -60,7 +60,6 @@ $(document).ready(() => {
             }
         })
     });
-});
 
     $(document).on("click", ".start-btn", (event) => {
         setInterval(updateDisplay, 1000);
@@ -69,6 +68,7 @@ $(document).ready(() => {
             value++;
             $("#timer").find(".value").text(value);
         }
-
     });
+});
+
 

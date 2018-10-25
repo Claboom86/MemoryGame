@@ -107,7 +107,6 @@ body {
 } 
 
 .card .front {
-    z-index: 2;
     background-image: url("images/scale.jpg");
     background-size: cover;
     border-radius: 10%;
@@ -115,7 +114,6 @@ body {
 
 .card .back {
     transform: rotateY(180deg);
-    z-index: 1;
     border-radius: 10%;
 }
 
@@ -124,12 +122,13 @@ body {
     backface-visibility: hidden;
 }
 
-.card.flipped {
-    transform: rotateY(180deg);
-}
-
 .matched {
     background-color: white;
+    background-image: none;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
 }
 
 .blue {

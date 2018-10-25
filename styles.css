@@ -44,7 +44,7 @@ body {
     text-align: center;
 }
 
-.main-container {
+.card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -53,17 +53,18 @@ body {
     margin: 0 auto;
     margin-top:12px;
     position: relative;
+    perspective: 600;
 }
 
 .card {
-    background-image: url("images/scale.jpg");
-    background-size: cover;
-    background-color: #206040;
     border-radius: 10%;
     height: 125px;
     width: 100px;
     margin: 4px;
     margin-bottom: 20px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
 }
 
 .start-menu {
@@ -91,12 +92,43 @@ body {
     position: absolute;
     bottom: 15px;
     right: 25px;
-
 }
 
 .instructions {
     margin: 10px;
 
+}
+
+.card div {
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+} 
+
+.card .front {
+    background-image: url("images/scale.jpg");
+    background-size: cover;
+    border-radius: 10%;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+    border-radius: 10%;
+}
+
+.front .back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.matched {
+    background-color: white;
+    background-image: none;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
 }
 
 .blue {
@@ -121,7 +153,6 @@ body {
 
 .pink {
     background-color: pink;
-    font-size: 20px;
 }
 
 .warrior {

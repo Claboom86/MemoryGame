@@ -1,35 +1,16 @@
 "use strict";
 
-$(document).ready(()=>{
-    let card = null;
-    // function flip() {
-    //     $('.card').toggleClass('flipped');
-    // }
-    
-     $(document).on("click", ".card", (event) => {
-            console.log("test");
+$(document).ready(() => {
+    $(document).on("click", ".start-btn", (event) => {
 
-            $('.card').toggleClass('flipped');
+        setInterval(updateDisplay, 1000);
+        function updateDisplay() {
+            var value = parseInt($("#timer").find(".value").text(), 10);
+            value++;
+            $("#timer").find(".value").text(value);
+        }
 
-        //     console.log("test");
-        //    card = $(event.target);
-        //    card.css("width", 0);
-        //    $(".front").css("display","flex");
-        //    $(".front").css("width", 100);
 
-               // .css("display",flex)
-            // $(event.target).
-            // $(".card")
-            // .addClass("byeBack").css("width", 0)
-            // .addClass("front").css("width", 100);
-            //                  .removeClass("back").removeClass("card");
-            
-                            
-        
-            });
 
-});
-            
-            
-
-    
+    })
+})

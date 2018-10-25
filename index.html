@@ -7,6 +7,7 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
 </head>
 
 <body>
@@ -17,14 +18,18 @@
 
 
     <button class="reset-btn" type="button">Reset</button>
-    <section class="timer"></section>
+    <section id="timer"><span class="value">0</span>s</section>
 
-    <section class="start-menu">
-        <p class="instructions">Instructions:</p>
-        <button class="start-btn" type="button">Start</button>
-    </section>
 
     <section class="main-container">
+
+        <section class="start-menu">
+            <p class="instructions">Instructions:
+                <p class="instructions">Help save the prince! Match cards to gain helpful weapons and tools before time
+                    runs out!</p>
+                <button class="start-btn" type="button">Start</button>
+        </section>
+
         <div class="card">
             <div class="front"></div>
             <div class="back"></div>
@@ -79,12 +84,13 @@
 
 
 
+<img src="images/warrior.png" alt="female warrior cartoon" class="warrior">
 
 
 
 
-    <script src = https://code.jquery.com/jquery-3.3.1.min.js></script>
-    <script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>

@@ -40,21 +40,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
     width: 95%;
-    height: 95%;
+    height: 500px;;
     margin: 0 auto;
     margin-top:15px;
     position: relative;
 }
-
-.card {
-    background-color: teal;
-    border-radius: 10%;
-    height: 125px;
-    width: 100px;
-    margin: 4px;
-    margin-bottom: 20px;
-}
-
 .start-menu {
     position: absolute;
     top: 50%;
@@ -76,10 +66,32 @@
     position: absolute;
     bottom: 15px;
     right: 25px;
-
 }
-
 
 .instructions {
     margin: 10px;
+}
+
+
+.card{
+    /* background-color:white; */
+    border-radius: 10%;
+    height: 125px;
+    width: 100px;
+    margin: 4px;
+    margin-bottom: 20px;
+    position: absolute;
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+}
+.card .front {
+    background: red;
+}
+.card .back {
+    background: blue;
+    transform: rotateY( 180deg );
+}
+.card.flipped {
+    transform: rotateY( 180deg );
 }

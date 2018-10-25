@@ -77,7 +77,8 @@ body {
     border: 2px solid black;
     height: 250px;
     width:  300px;
-    /*display: none;*/
+    /* display: none; */
+    
 }
 
 .start-btn{
@@ -95,6 +96,32 @@ body {
 
 .instructions {
     margin: 10px;
+
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.purple {
+     background-color: purple;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.pink {
+    background-color: pink;
+=======
     font-size: 20px;
 }
 

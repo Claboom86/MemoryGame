@@ -60,46 +60,6 @@ $(document).ready(() => {
             }
         })
     });
-
-
-
-
-    // $(".start-btn").on("click", (event) => {
-    //     $(".start-menu").hide();
-
-    //     $(".back").each(function() {
-
-    //         while (classes.length) {
-    //             var index = Math.floor(Math.random() * classes.length);
-    //             console.log(index);
-    //             console.log(event.target);
-    //             $(this).addClass(classes[index]);
-    //             classes.splice(index, 1);
-    //         }
-    //     });
-
-    // while (classes.length) {
-    //     var index = Math.floor(Math.random() * classes.length);
-    //     console.log(index);
-    //     classes.splice(index, 1);
-
-
-    //     $(".back").each(function() {
-    //         // console.log("yay!");
-    //         $(this).addClass(classes[index]);
-    //     //     classes.splice(index, 1);
-    //     });
-    // }
-
-    // $(".back").each(function() {
-    //     $(this).addClass(classes[Math.floor((Math.random() * 5, 1) + 0)]);
-    //     classes.splice()
-    // });
-    // });
-
-
-
-
 });
 
     $(document).on("click", ".start-btn", (event) => {
@@ -111,8 +71,5 @@ $(document).ready(() => {
             $("#timer").find(".value").text(value);
         }
 
-
-
-    })
-})
+    });
 

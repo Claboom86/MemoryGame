@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(() => {
-
+    let compare = [];
 
     function assignRandomCards() {
         var classes = ["blue", "blue", "green", "green", "red", "red", "purple", "purple", "orange", "orange", "pink", "pink"];
@@ -79,16 +79,48 @@ $(document).ready(() => {
         timerSet();
     });
 
+    $(document).on("click", ".reset-btn", (event) => {
+        location.reload();
+    });
+
+
     $(document).on("click", ".start-btn", (event) => {
         timerSet();
     });
 
-    $(document).on("click", ".card", (event) => {
+
+    
+    $(document).on("click", ".front", (event) => {
         $(event.target).parent().toggleClass("flipped");
-        console.log("you clicked a card!");
-    })
+        // for (let i = 0; i < 2; i++) {
+            compare.push($(event.target).siblings().attr("class"));
+        // }
+        console.log(compare);
+        setTimeout(checkMatch, 3000);
+    });
+
+
+    function checkMatch() {
+        if (compare[0] === compare[1]) {
+            hideCards();
+            compare.length = 0;
+            return;
+        } else if (compare[0] !== compare[1]) {
+            flipCardsBack();
+            console.log("test");
+        }
+        compare.length = 0;
+    };
+
+
+    function hideCards() {
+        $(".flipped").addClass("matched");
+    }
+
+    function flipCardsBack() {
+        $(".flipped").toggleClass("flipped");
+    }
+
+
 
 });
-
-
-

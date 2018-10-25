@@ -2,12 +2,10 @@
 
 $(document).ready(() => {
 
-    var classes = ["blue", "blue", "green", "green", "red", "red", "purple", "purple", "orange", "orange", "pink", "pink"];
-    var randomClass = [];
 
-    $(".start-btn").on("click", (event) => {
-        $(".start-menu").hide();
-
+    function assignRandomCards() {
+        var classes = ["blue", "blue", "green", "green", "red", "red", "purple", "purple", "orange", "orange", "pink", "pink"];
+        let randomClass = [];
         let i = classes.length
         let j = 0;
 
@@ -59,17 +57,38 @@ $(document).ready(() => {
                     break;
             }
         })
-    });
-});
+    }
 
-    $(document).on("click", ".start-btn", (event) => {
-
+    function timerSet() {
         setInterval(updateDisplay, 1000);
         function updateDisplay() {
             var value = parseInt($("#timer").find(".value").text(), 10);
             value++;
             $("#timer").find(".value").text(value);
         }
+    };
 
+    $(".start-btn").on("click", (event) => {
+        $(".start-menu").hide();
+        assignRandomCards();
     });
+
+    $(document).on("click", ".reset-btn", (event) => {
+        assignRandomCards();
+        $(".value").text("0");
+        timerSet();
+    });
+
+    $(document).on("click", ".start-btn", (event) => {
+        timerSet();
+    });
+
+    $(document).on("click", ".card", (event) => {
+        $(event.target).parent().toggleClass("flipped");
+        console.log("you clicked a card!");
+    })
+
+});
+
+
 

@@ -59,8 +59,8 @@ $(document).ready(() => {
             }
         })
     }
-let time = 0;
-let keepScore = 0;
+    let time = 0;
+    let keepScore = 0;
     function timerSet() {
         keepScore = setInterval(updateDisplay, 1000);
         function updateDisplay() {
@@ -103,12 +103,12 @@ let keepScore = 0;
         })
     };
 
-let matchCount = 0;
-clickEvent();
+    let matchCount = 0;
+    clickEvent();
 
 
     function checkMatch() {
-        
+
         // console.log(matchCount);
         if (compare[0] === compare[1]) {
             $(".flipped").children().attr("id", "matched");
@@ -117,29 +117,29 @@ clickEvent();
             matchCount++;
             clickEvent();
             console.log(matchCount);
-            if (matchCount === 6){              
-                 clearInterval(keepScore);
-                 displayWin();
+            if (matchCount === 6) {
+                clearInterval(keepScore);
+                displayWin();
             }
             return;
         }
-        
-        else {    
-          $(".flipped").removeClass("flipped");
+
+        else {
+            $(".flipped").removeClass("flipped");
             console.log("test");
             compare.length = 0;
             clickCount = 0;
             clickEvent();
             return;
-        } 
+        }
 
         clickCount = 0;
-        
+
     }
-  
+
     const displayWin = () => {
         console.log(time);
     }
-   
+
 });
 

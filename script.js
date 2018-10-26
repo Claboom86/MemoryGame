@@ -111,7 +111,7 @@ $(document).ready(() => {
     function checkMatch() {
         if (compare[0] === compare[1]) {
             // hideCards();
-            $(".flipped").children().addClass("matched");
+            $(".flipped").children().attr("id", "matched");
             compare.length = 0;
             return;
         } else {

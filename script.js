@@ -93,7 +93,7 @@ let keepScore = 0;
             console.log(compare);
             console.log(clickCount);
             if (clickCount === 2) {
-                setTimeout(checkMatch, 3000);
+                setTimeout(checkMatch, 2000);
                 console.log("You've clicked twice");
                 $(document).off("click", ".front");
                 clickCount = 0;
@@ -138,6 +138,9 @@ clickEvent();
     }
   
     const displayWin = () => {
+        $(".winMessage").css("display", "block");
+        $(".prince").css("display", "block");
+        $(".time").text(`It took you ${time} seconds to rescue the prince!`);
         console.log(time);
     }
    

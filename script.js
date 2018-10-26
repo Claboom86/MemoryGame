@@ -59,15 +59,13 @@ $(document).ready(() => {
             }
         })
     }
-    let time = 0;
-    let keepScore = 0;
+
     function timerSet() {
-        keepScore = setInterval(updateDisplay, 1000);
+        setInterval(updateDisplay, 1000);
         function updateDisplay() {
             var value = parseInt($("#timer").find(".value").text(), 10);
             value++;
             $("#timer").find(".value").text(value);
-            time = $("#timer").find(".value").text();
         }
     };
 
@@ -79,7 +77,6 @@ $(document).ready(() => {
     $(document).on("click", ".reset-btn", (event) => {
         location.reload();
     });
-
 
     $(document).on("click", ".start-btn", (event) => {
         timerSet();
@@ -103,43 +100,21 @@ $(document).ready(() => {
         })
     };
 
-    let matchCount = 0;
     clickEvent();
 
-
     function checkMatch() {
-
-        // console.log(matchCount);
         if (compare[0] === compare[1]) {
             $(".flipped").children().attr("id", "matched");
             compare.length = 0;
             clickCount = 0;
-            matchCount++;
             clickEvent();
-            console.log(matchCount);
-            if (matchCount === 6) {
-                clearInterval(keepScore);
-                displayWin();
-            }
             return;
-        }
-
-        else {
+        } else {
             $(".flipped").removeClass("flipped");
             console.log("test");
             compare.length = 0;
             clickCount = 0;
             clickEvent();
-            return;
         }
-
-        clickCount = 0;
-
-    }
-
-    const displayWin = () => {
-        console.log(time);
-    }
-
+    };
 });
-

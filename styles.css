@@ -135,7 +135,6 @@ body {
 #matched {
     background-color: white;
     background-image: none;
-    z-index: 10;
 }
 
 .card.flipped {

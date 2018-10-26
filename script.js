@@ -74,68 +74,47 @@ $(document).ready(() => {
         assignRandomCards();
     });
 
-    // $(document).on("click", ".reset-btn", (event) => {
-    //     assignRandomCards();
-    //     $(".value").text("0");
-    //     timerSet();
-    // });
-
     $(document).on("click", ".reset-btn", (event) => {
         location.reload();
     });
-
 
     $(document).on("click", ".start-btn", (event) => {
         timerSet();
     });
 
+    var clickEvent = function () {
+        $(document).on("click", ".front", (event) => {
+            clickCount++;
+            $(event.target).parent().addClass("flipped");
+            compare.push($(event.target).siblings().attr("class"));
+            console.log(compare);
+            console.log(clickCount);
+            if (clickCount === 2) {
+                setTimeout(checkMatch, 3000);
+                console.log("You've clicked twice");
+                $(document).off("click", ".front");
+                clickCount = 0;
+            } else {
+                console.log("you need more clicks!");
+            }
+        })
+    };
 
-    
-    $(document).on("click", ".front", (event) => {
-        clickCount++;
-        $(event.target).parent().addClass("flipped");
-        compare.push($(event.target).siblings().attr("class"));
-        console.log(compare);
-        console.log(clickCount);
-        if (clickCount === 2) {
-            setTimeout(checkMatch, 3000);
-            console.log("You've clicked twice");
-            clickCount = 0;
-        } else {
-            console.log("you need more clicks!");
-        }
-    });
-
-
+    clickEvent();
 
     function checkMatch() {
         if (compare[0] === compare[1]) {
-            // hideCards();
             $(".flipped").children().attr("id", "matched");
             compare.length = 0;
+            clickCount = 0;
+            clickEvent();
             return;
         } else {
-            // flipCardsBack();
             $(".flipped").removeClass("flipped");
             console.log("test");
             compare.length = 0;
+            clickCount = 0;
+            clickEvent();
         }
-        clickCount = 0;
     };
-
-    // $(".matched").each(function () {
-    //     $(this).children().css("background-image", "");
-    //     $(this).children().css("background-color", "white");
-    // });
-
-    // function hideCards() {
-    //     $(".flipped").addClass("matched");
-    // }
-
-    // function flipCardsBack() {
-    //     $(".flipped").removeClass("flipped");
-    // }
-
-
-
 });

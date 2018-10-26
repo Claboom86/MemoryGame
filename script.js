@@ -76,12 +76,6 @@ let keepScore = 0;
         assignRandomCards();
     });
 
-    // $(document).on("click", ".reset-btn", (event) => {
-    //     assignRandomCards();
-    //     $(".value").text("0");
-    //     timerSet();
-    // });
-
     $(document).on("click", ".reset-btn", (event) => {
         location.reload();
     });
@@ -91,69 +85,61 @@ let keepScore = 0;
         timerSet();
     });
 
-
-    
-    $(document).on("click", ".front", (event) => {
-        clickCount++;
-        $(event.target).parent().addClass("flipped");
-        compare.push($(event.target).siblings().attr("class"));
-        //console.log(compare);
-        //console.log(clickCount);
-        if (clickCount === 6) {
-            setTimeout(checkMatch, 3000);
-           // console.log("You've clicked twice");
-            clickCount = 0;
-        } else {
-           // console.log("you need more clicks!");
-        }
-    });
+    var clickEvent = function () {
+        $(document).on("click", ".front", (event) => {
+            clickCount++;
+            $(event.target).parent().addClass("flipped");
+            compare.push($(event.target).siblings().attr("class"));
+            console.log(compare);
+            console.log(clickCount);
+            if (clickCount === 2) {
+                setTimeout(checkMatch, 3000);
+                console.log("You've clicked twice");
+                $(document).off("click", ".front");
+                clickCount = 0;
+            } else {
+                console.log("you need more clicks!");
+            }
+        })
+    };
 
 let matchCount = 0;
+clickEvent();
+
 
     function checkMatch() {
         
         // console.log(matchCount);
         if (compare[0] === compare[1]) {
-            // hideCards();
             $(".flipped").children().attr("id", "matched");
             compare.length = 0;
+            clickCount = 0;
             matchCount++;
+            clickEvent();
             console.log(matchCount);
-            if (matchCount === 2){
-               // console.log(s)
+            if (matchCount === 6){              
                  clearInterval(keepScore);
-;                displayWin();
+                 displayWin();
             }
             return;
         }
         
-        else {
-            // flipCardsBack();
-            $(".flipped").removeClass("flipped");
+        else {    
+          $(".flipped").removeClass("flipped");
             console.log("test");
             compare.length = 0;
-        }
+            clickCount = 0;
+            clickEvent();
+            return;
+        } 
+
         clickCount = 0;
         
     }
+  
     const displayWin = () => {
         console.log(time);
-
     }
-    
-    });   
-    
+   
+});
 
-    
-    // $(".matched").each(function () {
-    //     $(this).children().css("background-image", "");
-    //     $(this).children().css("background-color", "white");
-    // });
-
-    // function hideCards() {
-    //     $(".flipped").addClass("matched");
-    // }
-
-    // function flipCardsBack() {
-    //     $(".flipped").removeClass("flipped");
-    // }

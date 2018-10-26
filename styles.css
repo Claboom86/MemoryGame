@@ -15,6 +15,10 @@ body {
     border: 3px solid black;
 }
 
+#bold {
+    font-weight: bolder;
+}
+
 .reset-btn{
     border: 2px solid black;
     border-top: none;
@@ -43,6 +47,12 @@ body {
     float: right;
     text-align: center;
 }
+
+.main-container {
+     display: flex;
+     justify-content: space-around;
+     margin: 0 auto;
+ }
 
 .card-container {
     display: flex;
@@ -78,7 +88,7 @@ body {
     border: 2px solid black;
     height: 250px;
     width:  300px;
-    /* display: none; */
+    /*display: none; */
     
 }
 
@@ -125,7 +135,6 @@ body {
 #matched {
     background-color: white;
     background-image: none;
-    z-index: 10;
 }
 
 .card.flipped {
@@ -133,33 +142,47 @@ body {
 }
 
 .blue {
-    background-color: blue;
+    background-image: url("images/swords.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .green {
-    background-color: green;
+    background-image: url("images/medicine.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .red {
-    background-color: red;
+    background-image: url("images/bowarrow.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .purple {
-     background-color: purple;
+    background-image: url("images/shield.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .orange {
-    background-color: orange;
+    background-image: url("images/helmet-309063_640.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .pink {
-    background-color: pink;
+    background-image: url("images/spear.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
-
-
 
 .warrior {
     display:none;
+}
+
+.end-game {
+    display: none;
 }
 
 @media only screen and (min-width: 580px) {
@@ -168,7 +191,9 @@ body {
         width: 500px;
         height: 550px;
     }
+}
 
+@media only screen and (min-width: 1000px) {
     .warrior {
         display: block;
         position: absolute;

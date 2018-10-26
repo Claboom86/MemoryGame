@@ -78,6 +78,7 @@ $(document).ready(() => {
         location.reload();
     });
 
+
     $(document).on("click", ".start-btn", (event) => {
         timerSet();
     });

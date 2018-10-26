@@ -182,8 +182,8 @@ body {
 }
 
 .winMessage {
-    /* display: none; */
-    height: 300px;
+    display: none;
+    height: 150px;
     width: 300px;
     position: fixed;
     margin: 0 auto;
@@ -191,14 +191,17 @@ body {
     background-color: #206040;
     border: 2px solid black;
     top: 40%;
+    text-align: center;
 }
 
 p.message {
     color: white;
+    font-size: 24px;
 }
 
 p.time {
     color: white;
+    font-size: 24px;
 }
 
 
